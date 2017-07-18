@@ -2,6 +2,7 @@
 <html>
 <body style="background-color:rgb(255,248,220);"> 
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 @import url('https://fonts.googleapis.com/css?family=Rakkas');
 ul {
@@ -24,6 +25,85 @@ li a {
 li a:hover {
     background-color:white;
 }
+* {box-sizing:border-box}
+body {font-family: Verdana,sans-serif;margin:0}
+.mySlides {display:none}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 2s;
+  animation-name: fade;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .25} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .25} 
+  to {opacity: 1}
+}
 </style>
 </head>
 <h1 style="border: 3px solid skyblue; padding: 10px; color:dimgray; font-family: 'Rakkas', cursive;">Jennifer Adams</h1>
@@ -35,8 +115,68 @@ li a:hover {
 </ul>
 <hr>
 <h2 style="text-align:center"; >About Me</h2>
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="img_nature_wide.jpg" style="width:100%">
+  <div class="text">Caption Text</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src=soccer1.JPG alt='playing soccer' style="width:100%">
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="img_fjrds_wide.jpg" alt="what" style="width:100%">
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="img_mountains_wide.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
 <center>
-<img src=soccer.JPG alt='playing soccer' width="400" height="265" >
+<!--img src=soccer.JPG alt='playing soccer' width="400" height="265" /-->
 </center>
 <p style="text-align:center; font-family:'rakkas', cursive;" >My name is Jennifer Adams. I am currently 16 and attend Montgomery High School. My intellectual interests include <br>
   computer science (I love coding!), graphic design, math, and many sciences (especially physics!). I play and have played soccer <br>
@@ -45,7 +185,7 @@ li a:hover {
   painting, jewelry making (I love being able to see my work getting use!), water color, and most importantly, being able to make my friends laugh. </p>
 <center>
 <center>
-<img src=soccer1.JPG alt='playing soccer' width="426.67" height="282.67" >
+<!--img src=soccer1.JPG alt='playing soccer' width="426.67" height="282.67" /-->
 </center>
 <a href="homepage"; >Back to Homepage</a>
   </center>
