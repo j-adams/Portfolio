@@ -29,14 +29,12 @@ li a:hover {
 * {box-sizing:border-box}
 body
 .mySlides {display:none}
-
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
   position: relative;
   margin: auto;
 }
-
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
@@ -51,21 +49,15 @@ body
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
 }
-
 /* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
-.title {
-    font-family: 'rakkas', cursive;
-    color: dimgray;
-    font-size: 18px;
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
   background-color: skyblue;
 }
-
 /* Caption text */
 .text {
   color: white;
@@ -125,11 +117,9 @@ body
   top: 0;
   font-family: 'Dancing Script', cursive;
 }
-
 .active, .dot:hover {
   background-color: #717171;
 }
-
 /* Fading animation */
 .fade {
   -webkit-animation-name: fade;
@@ -137,24 +127,22 @@ body
   animation-name: fade;
   animation-duration: 2s;
 }
-
 @-webkit-keyframes fade {
   from {opacity: .25} 
   to {opacity: 1}
 }
-
 @keyframes fade {
   from {opacity: .25} 
   to {opacity: 1}
 }
 </style>
 </head>
-<h1 style="border: 3px solid skyblue; padding: 10px; margin-right:898px; margin-left:15px; color:dimgray; font-family: 'Satisfy', cursive;">Jennifer Adams</h1>
+<h1 style="border: 3px solid skyblue; padding: 10px; color:dimgray; font-family: 'Satisfy', cursive;">Jennifer Adams</h1>
   <!--Have to insert my horizontal list here w/ tab for 'my story' and 'my work'-->
   <ul>
-  <li><a href="homepage" class="title">Home</a></li>
-  <li><a href="aboutme.html" class="title">About Me</a></li>
-  <li><a href="portfolio.html" class="title">Portfolio</a></li>
+  <li><a href="homepage">Home</a></li>
+  <li><a href="aboutme.html">About Me</a></li>
+  <li><a href="portfolio.html">Portfolio</a></li>
 </ul>
 <h1 style="text-align:center; font-family: 'Dancing Script', cursive; font-size:300%; color:dimgray;">About Me</h1>
 <div class="slideshow-container">
@@ -232,15 +220,12 @@ body
 <script>
 var slideIndex = 1;
 showSlides(slideIndex);
-
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
-
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
-
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
